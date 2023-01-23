@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # Add your routes here
+  get '/auth/:provider/callback', to: 'sessions#create'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+
+  root 'welcome#home'
 end
